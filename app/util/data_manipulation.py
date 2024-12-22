@@ -55,6 +55,32 @@ class DataManipulation:
             return "--blue-300"
         elif vendor.upper() == "County of Allegheny Treasurer".upper():
             return "--yellow-300"
+        elif vendor.upper() == "OPENAI".upper():
+            return "--blue-600"
+        elif vendor.upper() == "American freight".upper():
+            return "--gray-800"
+        elif vendor.upper() == "412 junk removal".upper():
+            return "--green-900"
+        elif vendor.upper() == "elizabeth township".upper():
+            return "--red-900"
+        elif vendor.upper() == "all elite inspections".upper():
+            return "--yellow-500"
+        elif vendor.upper() == "baker's waterproofing".upper():
+            return "--green-900"
+        elif vendor.upper() == "Worldwide services".upper():
+            return "--purple-900"
+        elif vendor.upper() == "milvan".upper():
+            return "--purple-500"
+        elif vendor.upper() == "J&A Plumbing".upper():
+            return "--orange-900"
+        elif vendor.upper() == "Traveler Home insurance".upper():
+            return "--orange-400"
+        elif vendor.upper() == "Aladdin Electric services".upper():
+            return "--orange-200"
+        elif vendor.upper() == "Township of Upper St.Clair - Community Development".upper():
+            return "--green-900"
+        elif vendor.upper() == "Elizabeth Township Sanitary Sewer".upper():
+            return "--green-200"
         else:
             return "--red-500"
 
@@ -92,6 +118,32 @@ class DataManipulation:
             return "--blue-200"
         elif vendor.upper() == "County of Allegheny Treasurer".upper():
             return "--yellow-300"
+        elif vendor.upper() == "OPENAI".upper():
+            return "--blue-200"
+        elif vendor.upper() == "American freight".upper():
+            return "--gray-700"
+        elif vendor.upper() == "412 junk removal".upper():
+            return "--green-800"
+        elif vendor.upper() == "elizabeth township".upper():
+            return "--red-800"
+        elif vendor.upper() == "all elite inspections".upper():
+            return "--yellow-400"
+        elif vendor.upper() == "baker's waterproofing".upper():
+            return "--green-800"
+        elif vendor.upper() == "Worldwide services".upper():
+            return "--purple-800"
+        elif vendor.upper() == "milvan".upper():
+            return "--purple-400"
+        elif vendor.upper() == "J&A Plumbing".upper():
+            return "--orange-800"
+        elif vendor.upper() == "Traveler Home insurance".upper():
+            return "--orange-300"
+        elif vendor.upper() == "Aladdin Electric services".upper():
+            return "--orange-100"
+        elif vendor.upper() == "Township of Upper St.Clair - Community Development".upper():
+            return "--green-800"
+        elif vendor.upper() == "Elizabeth Township Sanitary Sewer".upper():
+            return "--green-100"
         else:
             return "--red-400"
 
