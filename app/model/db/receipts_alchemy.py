@@ -39,13 +39,14 @@ class Receipt:
     invoice_id: str
     spend_type: str
     sha256: str
+    description: str
 
     # def __init__(self) -> None:
     #     pass
 
     def __init__(self, file_path: str, total: float, sub_total: float, tax: float, vendor: str, company_name: str,
                  created_by: str, purchased_at: datetime.date, vendor_address: str, customer_name: str,
-                 invoice_id: str, spend_type: str, sha256: str) -> None:
+                 invoice_id: str, spend_type: str, sha256: str, description: str) -> None:
         self.file_path = file_path
         self.total = total
         self.sub_total = sub_total
@@ -58,6 +59,8 @@ class Receipt:
         self.invoice_id = invoice_id
         self.created_by = created_by
         self.spend_type = spend_type
+        self.description = description
+
         self.sha256 = sha256
 
     def __str__(self) -> str:
@@ -81,12 +84,13 @@ class Receipt:
             "invoice_id": self.invoice_id,
             "spend_type": self.spend_type,
             "sha256": self.sha256,
+            "description": self.description
         }
 
     @classmethod
     def empty(cls):
         return cls("", None, None, None, "", ""
-                   , "", None, "", "", "", "", "")
+                   , "", None, "", "", "", "", "", "")
 
     def convert_to_receipts_alchemy(self) -> object:
         return Receipts(file_path=self.file_path, total=self.total,
@@ -95,7 +99,7 @@ class Receipt:
                         vendor=self.vendor, created_by=self.created_by,
                         purchased_at=self.purchased_at, vendor_address=self.vendor_address,
                         customer_name=self.customer_name, invoice_id=self.invoice_id,
-                        spend_type=self.spend_type, sha256=self.sha256)
+                        spend_type=self.spend_type, sha256=self.sha256, description=self.description)
 
 
 class Receipts(Base):
@@ -116,12 +120,15 @@ class Receipts(Base):
     invoice_id: str = Column(String(200), nullable=True)
     spend_type: str = Column(String(200), nullable=True)
     sha256: str = Column(String(200), nullable=True)
+    description: str = Column(String(500), nullable=True)
 
     def __str__(self) -> str:
         return (
             f'id: {self.id}, file_path: {self.file_path}, total: {self.total}, sub_total: {self.sub_total}, tax: {self.tax}, vendor: {self.vendor}, '
             f'created_at: {self.created_at}, created_by: {self.created_by} '
-            f'company_name: {self.company_name} purchased_at: {self.purchased_at} vendor_address: {self.vendor_address}')
+            f'company_name: {self.company_name} purchased_at: {self.purchased_at} vendor_address: {self.vendor_address}, '
+            f'customer_name: {self.customer_name}, invoice_id: {self.invoice_id}, spend_type: {self.spend_type}, sha256: {self.sha256}, '
+            f'description: {self.description}')
 
     def to_dict(self):
         return {
@@ -139,7 +146,8 @@ class Receipts(Base):
             'customer_name': self.customer_name,
             'invoice_id': self.invoice_id,
             'spend_type': self.spend_type,
-            'sha256': self.sha256
+            'sha256': self.sha256,
+            'description': self.description
         }
 
     @staticmethod

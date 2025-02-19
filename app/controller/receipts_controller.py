@@ -155,6 +155,11 @@ def store_receipts_ai_assisted() -> Tuple[Dict[str, str], int]:
          type: string
          required: true
          description: hash of the file content.
+       - name: description
+         in: formData
+         type: string
+         required: false
+         description: description for the expense.
      responses:
        200:
          description: OK if the file is uploaded successfully.
@@ -182,6 +187,7 @@ def store_receipts_ai_assisted() -> Tuple[Dict[str, str], int]:
         invoice_id = request.form.get('invoice_id')
         spend_type = request.form.get('spend_type')
         sha256 = request.form.get('sha256')
+        description = request.form.get('description')
         print(spend_type)
         receipt: Receipt = Receipt.empty()
         receipt.total = float(total)
@@ -195,6 +201,7 @@ def store_receipts_ai_assisted() -> Tuple[Dict[str, str], int]:
         receipt.invoice_id = invoice_id
         receipt.spend_type = spend_type
         receipt.sha256 = sha256
+        receipt.description = description
 
         full_name = get_full_name()
         # full_name = "TEST"

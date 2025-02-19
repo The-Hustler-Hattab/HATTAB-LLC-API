@@ -253,3 +253,6 @@ CREATE TABLE `contractors` (
 	`quote_file_location` VARCHAR(300),
 	PRIMARY KEY (`id`)
 );
+
+ALTER TABLE operations_receipts
+ADD COLUMN description VARCHAR(500) ;
