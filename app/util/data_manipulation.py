@@ -81,6 +81,26 @@ class DataManipulation:
             return "--green-900"
         elif vendor.upper() == "Elizabeth Township Sanitary Sewer".upper():
             return "--green-200"
+        elif vendor.upper() == "PEOPLES".upper():
+            return "--blue-200"
+        elif vendor.upper() == "WestPenn Power FirstEnergy".upper():
+            return "--blue-900"
+        elif vendor.upper() == "Luis Jimenez".upper():
+            return "--red-200"
+        elif vendor.upper() == "City and School District of Pittsburgh Taxes".upper():
+            return "--orange-200"
+        elif vendor.upper() == "Christian Morcho".upper():
+            return "--pink-200"
+        elif vendor.upper() == "County Tax Payment Web".upper():
+            return "--green-200"
+        elif vendor.upper() == "Pittsburgh Real Estate Taxes".upper():
+            return "--yellow-200"
+        elif vendor.upper() == "LTS Legal Tax Service".upper():
+            return "--pink-600"
+        elif vendor.upper() == "Alleghany county Tax Payment Web".upper():
+            return "--orange-900"
+        elif vendor.upper() == "WM".upper():
+            return "--green-200"
         else:
             return "--red-500"
 
@@ -143,6 +163,26 @@ class DataManipulation:
         elif vendor.upper() == "Township of Upper St.Clair - Community Development".upper():
             return "--green-800"
         elif vendor.upper() == "Elizabeth Township Sanitary Sewer".upper():
+            return "--green-100"
+        elif vendor.upper() == "PEOPLES".upper():
+            return "--blue-100"
+        elif vendor.upper() == "WestPenn Power FirstEnergy".upper():
+            return "--blue-800"
+        elif vendor.upper() == "Luis Jimenez".upper():
+            return "--red-100"
+        elif vendor.upper() == "City and School District of Pittsburgh Taxes".upper():
+            return "--orange-100"
+        elif vendor.upper() == "Christian Morcho".upper():
+            return "--pink-100"
+        elif vendor.upper() == "County Tax Payment Web".upper():
+            return "--green-100"
+        elif vendor.upper() == "Pittsburgh Real Estate Taxes".upper():
+            return "--yellow-100"
+        elif vendor.upper() == "LTS Legal Tax Service".upper():
+            return "--pink-500"
+        elif vendor.upper() == "Alleghany county Tax Payment Web".upper():
+            return "--orange-800"
+        elif vendor.upper() == "WM".upper():
             return "--green-100"
         else:
             return "--red-400"
